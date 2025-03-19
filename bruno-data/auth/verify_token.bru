@@ -1,0 +1,21 @@
+meta {
+  name: verify_token
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{host}}/auth/verify
+  body: json
+  auth: none
+}
+
+headers {
+  authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQyNDA1MTA3LCJleHAiOjE3NDI0MDg3MDd9.FVEaSuMZDrZdFWiXIbEB6Lntty0hK1IseBrP4tPm6eM
+}
+
+body:json {
+  {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQyNDA1MTA3LCJleHAiOjE3NDI0MDg3MDd9.FVEaSuMZDrZdFWiXIbEB6Lntty0hK1IseBrP4tPm6eM"
+  }
+}

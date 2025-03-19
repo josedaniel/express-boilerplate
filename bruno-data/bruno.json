@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "express-boilerplate",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

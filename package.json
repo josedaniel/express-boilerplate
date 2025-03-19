@@ -1,0 +1,47 @@
+{
+  "name": "express-boilerplate",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./node_modules/concurrently/dist/bin/concurrently -c green,cyan,yellow 'pnpm nodemon' 'pnpm esbuild' 'pnpm browsersync'",
+    "client": "node ./node_modules/concurrently/dist/bin/concurrently -n esbuild,browsersync -c green,cyan 'pnpm esbuild' 'pnpm browsersync'",
+    "start": "node app.js",
+    "nodemon": "./node_modules/nodemon/bin/nodemon.js --inspect",
+    "browsersync": "./node_modules/browser-sync/dist/bin.js start --config 'client/_settings/bs-config.js'",
+    "esbuild": "node client/_settings/esbuild-config.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "esbuild": "^0.25.1",
+    "esbuild-plugin-eslint": "^0.3.12",
+    "esbuild-plugin-tsc": "^0.5.0",
+    "esbuild-sass-plugin": "^3.3.1",
+    "express": "^4.21.2",
+    "globals": "^16.0.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "lit": "^3.2.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "browser-sync": "^3.0.3",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "esbuild"
+    ]
+  }
+}
