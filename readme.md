@@ -10,3 +10,9 @@
 - Quitar la regla de los parentesis de prettier
 - Instalar una configuración por defecto de pm2
 - Crear algunos defaults para copilot
+- Ajustar reglas de prettier (console.log)
+- Agregar un reset stylesheet chévere
+    - colores bonitos
+    - dark mode
+    - fuentes suaves
+    - defaults configurables
