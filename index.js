@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 /**
  * Main application file
  * This file initializes the Express server with all required middleware and routes
@@ -48,17 +49,17 @@ app.use(
         defaultSrc: ["'self'"],
         scriptSrc: ["'self'", "'unsafe-inline'"],
         styleSrc: ["'self'", "'unsafe-inline'"],
-        imgSrc: ["'self'", "data:"],
+        imgSrc: ["'self'", 'data:'],
         connectSrc: ["'self'"],
         fontSrc: ["'self'"],
         objectSrc: ["'none'"],
         mediaSrc: ["'self'"],
         frameSrc: ["'none'"],
-        upgradeInsecureRequests: null,
-      },
+        upgradeInsecureRequests: null
+      }
     },
     // Disable HTTPS-only
-    strictTransportSecurity: false,
+    strictTransportSecurity: false
   })
 );
 
