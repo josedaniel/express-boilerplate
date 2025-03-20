@@ -9,6 +9,18 @@ module.exports = {
    * @param {Object} res - Express response object
    */
   homepage(req, res) {
-    res.send('Welcome to the homepage');
+    res.render('home', {
+      title: 'Express Boilerplate',
+      pageTitle: 'Welcome to Express Boilerplate ✨',
+      welcomeMessage: 'A modern boilerplate for web applications with Express 🚀',
+      currentYear: new Date().getFullYear(),
+      features: [
+        '⚡ Express configured and ready to use',
+        '🖌️ Handlebars as template engine',
+        '🔐 JWT Authentication',
+        '🔄 RESTful API',
+        '🛡️ Security with Helmet'
+      ]
+    });
   }
 };

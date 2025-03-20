@@ -16,9 +16,7 @@ module.exports = {
     port: 3001
   },
   files: ['public/css/*.css', 'public/js/*.js', 'app/views/**/*.njk', 'app/views/**/*.html'],
-  watchEvents: [
-    'change', 'add'
-  ],
+  watchEvents: ['change', 'add'],
   watch: true,
   ignore: [],
   single: false,

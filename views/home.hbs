@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>{{pageTitle}}</h1>
+    <p>{{welcomeMessage}}</p>
+
+    {{#if features}}
+    <div class="features">
+        <h2>Features</h2>
+        <ul>
+            {{#each features}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    </div>
+    {{/if}}
+</div>

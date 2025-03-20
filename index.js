@@ -6,6 +6,7 @@ const express = require('express');
 const helmet = require('helmet');
 const dotenv = require('dotenv');
 const path = require('path');
+const { engine } = require('express-handlebars'); // Importar express-handlebars
 
 // Import middleware and route configurations
 const authMiddleware = require('./config/middleware/auth');
@@ -20,6 +21,19 @@ dotenv.config();
 // Initialize Express application
 const app = express();
 const port = process.env.PORT || 8080;
+
+// Configure Handlebars as the default view engine
+app.engine(
+  'hbs',
+  engine({
+    extname: '.hbs',
+    defaultLayout: 'main',
+    layoutsDir: path.join(__dirname, 'views/layouts'),
+    partialsDir: path.join(__dirname, 'views/partials')
+  })
+);
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'views'));
 
 // Helmet security middleware
 app.use(helmet());
