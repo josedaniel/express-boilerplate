@@ -2,12 +2,11 @@
  * Website Routes Configuration
  * Sets up routes for the public-facing website
  */
-const express = require('express');
-const website = require('../controllers/website.controller');
+import express from 'express';
+import { homepage } from '../controllers/website.controller.js';
 
 const router = express.Router();
 
-// Homepage route
-router.get('/', website.homepage);
+router.get('/', homepage);
 
-module.exports = router;
+export default router;

@@ -2,18 +2,23 @@
  * Main application file
  * This file initializes the Express server with all required middleware and routes
  */
-const express = require('express');
-const helmet = require('helmet');
-const dotenv = require('dotenv');
-const path = require('path');
-const { engine } = require('express-handlebars'); // Importar express-handlebars
+import express from 'express';
+import helmet from 'helmet';
+import dotenv from 'dotenv';
+import path from 'path';
+import { engine } from 'express-handlebars';
+import { fileURLToPath } from 'url';
 
 // Import middleware and route configurations
-const authMiddleware = require('./config/middleware/auth');
-const website_routes = require('./config/website.routes');
-const auth_routes = require('./config/auth.routes');
-const api_routes = require('./config/api.routes');
-const service_routes = require('./config/service.routes');
+import authMiddleware from './config/middleware/auth.js';
+import website_routes from './config/website.routes.js';
+import auth_routes from './config/auth.routes.js';
+import api_routes from './config/api.routes.js';
+import service_routes from './config/service.routes.js';
+
+// Para __dirname en ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Load environment variables from .env file
 dotenv.config();
@@ -36,7 +41,26 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
 // Helmet security middleware
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'", "'unsafe-inline'"],
+        styleSrc: ["'self'", "'unsafe-inline'"],
+        imgSrc: ["'self'", "data:"],
+        connectSrc: ["'self'"],
+        fontSrc: ["'self'"],
+        objectSrc: ["'none'"],
+        mediaSrc: ["'self'"],
+        frameSrc: ["'none'"],
+        upgradeInsecureRequests: null,
+      },
+    },
+    // Disable HTTPS-only
+    strictTransportSecurity: false,
+  })
+);
 
 // Middleware for parsing JSON requests
 app.use(express.json());

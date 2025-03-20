@@ -2,12 +2,12 @@
  * Service Routes Configuration
  * Sets up routes for public services
  */
-const express = require('express');
-const service = require('../controllers/service.controller');
+import express from 'express';
+import service from '../controllers/service.controller.js';
 
 const router = express.Router();
 
 // Root service route
 router.get('/', service.welcome);
 
-module.exports = router;
+export default router;

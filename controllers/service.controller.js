@@ -2,7 +2,7 @@
  * Service Controller
  * Handles public service endpoints
  */
-module.exports = {
+export default {
   /**
    * Welcome message for public services
    * @param {Object} req - Express request object

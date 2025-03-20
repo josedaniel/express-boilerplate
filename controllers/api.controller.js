@@ -2,7 +2,7 @@
  * API Controller
  * Handles API endpoints
  */
-module.exports = {
+export default {
   /**
    * Welcome message for API
    * @param {Object} req - Express request object

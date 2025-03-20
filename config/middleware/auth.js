@@ -2,7 +2,7 @@
  * Authentication Middleware
  * This module provides JWT token validation functionality for protected routes
  */
-const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
 
 /**
  * Middleware for authenticating users via JWT tokens
@@ -37,4 +37,4 @@ const authMiddleware = (req, res, next) => {
   }
 };
 
-module.exports = authMiddleware;
+export default authMiddleware;
