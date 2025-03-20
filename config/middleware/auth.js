@@ -1,26 +1,39 @@
+/**
+ * Authentication Middleware
+ * This module provides JWT token validation functionality for protected routes
+ */
 const jwt = require('jsonwebtoken');
 
+/**
+ * Middleware for authenticating users via JWT tokens
+ * Validates the JWT token from the Authorization header and adds decoded user data to the request object
+ *
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @param {Function} next - Express next middleware function
+ * @returns {Object|void} Returns error response or calls next middleware
+ */
 const authMiddleware = (req, res, next) => {
-  // Obtener el token del encabezado Authorization
+  // Get token from Authorization header
   const authHeader = req.headers.authorization;
 
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    return res.status(401).json({ mensaje: 'Acceso no autorizado. Token requerido' });
+    return res.status(401).json({ message: 'Unauthorized access. Token required' });
   }
 
-  // Extraer el token (quitar 'Bearer ')
+  // Extract token (remove 'Bearer ' prefix)
   const token = authHeader.split(' ')[1];
 
   try {
-    // Verificar el token
+    // Verify the token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    // Agregar el usuario decodificado al objeto de solicitud para su uso posterior
+    // Add the decoded user to the request object for later use
     req.user = decoded;
 
     next();
   } catch (error) {
-    return res.status(401).json({ mensaje: 'Token inválido' });
+    return res.status(401).json({ message: 'Invalid token', error });
   }
 };
 

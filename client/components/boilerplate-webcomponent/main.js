@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit';
 
-export class VulkanoWebcomponent extends LitElement {
+export class BoilerplateWebcomponent extends LitElement {
   // createRenderRoot() {
   //   return this;
   // }
@@ -25,9 +25,9 @@ export class VulkanoWebcomponent extends LitElement {
   render() {
     return html`<p>
       This is a ${this.name} written in plain JS! <br />
-      You can edit this in client/components/vulkano-webcomponent/main.js.
+      You can edit this in client/components/boilerplate-webcomponent/main.js.
     </p>`;
   }
 }
 
-customElements.define('vulkano-webcomponent', VulkanoWebcomponent);
+customElements.define('boilerplate-webcomponent', BoilerplateWebcomponent);

@@ -8,14 +8,14 @@ module.exports = [
   eslint.configs.recommended,
   prettierConfig,
   {
-    ignores: ['node_modules/', 'dist/', 'build/'],
+    ignores: ['node_modules/', 'public/'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
       globals: {
         ...globals.browser,
         ...globals.node
-      },
+      }
     },
     plugins: {
       prettier: prettierPlugin,
@@ -23,20 +23,23 @@ module.exports = [
     },
     rules: {
       'prettier/prettier': 'error',
-      'semi': ['error', 'always'],
-      'quotes': ['error', 'single'],
+      semi: ['error', 'always'],
+      quotes: ['error', 'single'],
       'no-unused-vars': 'error',
       'no-console': 'off',
-      'indent': ['error', 2, { 'SwitchCase': 1 }],
+      indent: ['error', 2, { SwitchCase: 1 }],
       'linebreak-style': ['error', 'unix'],
-      'eqeqeq': 'error',
+      eqeqeq: 'error',
       'no-trailing-spaces': 'error',
       'comma-dangle': 'off',
-      'camelcase': ['error', {
-        'properties': 'never',
-        'ignoreDestructuring': true,
-        'allow': ['^[a-z]+(_[a-z]+)+$'] // Permite snake_case
-      }]
+      camelcase: [
+        'error',
+        {
+          properties: 'never',
+          ignoreDestructuring: true,
+          allow: ['^[a-z]+(_[a-z]+)+$'] // Permite snake_case
+        }
+      ]
     }
   }
 ];

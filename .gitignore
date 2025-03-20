@@ -13,14 +13,11 @@ yarn-debug.log*
 yarn-error.log*
 
 # Carpetas de compilación
-dist/
-build/
 public/css/
 public/js/
 
 # IDEs y editores
 .idea/
-.vscode/
 *.swp
 *.swo
 .DS_Store

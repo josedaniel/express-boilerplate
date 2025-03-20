@@ -1,4 +1,3 @@
-/* eslint-disable prefer-const */
 import * as esbuild from 'esbuild';
 import { sassPlugin } from 'esbuild-sass-plugin';
 import eslint from 'esbuild-plugin-eslint';
@@ -11,24 +10,20 @@ let main_js = await esbuild.context({
   outfile: 'public/js/main.js',
   logLevel: 'warning',
   sourcemap: true,
-  plugins: [
-    eslint({ fix: true, })
-  ]
+  plugins: [eslint({ fix: true })]
 });
 await main_js.watch();
 
-// client/components/vulkano-webcomponent/main.js
-let vulkano_webcomponent = await esbuild.context({
-  entryPoints: ['client/components/vulkano-webcomponent/main.js'],
+// client/components/boilerplate-webcomponent/main.js
+let boilerplate_webcomponent = await esbuild.context({
+  entryPoints: ['client/components/boilerplate-webcomponent/main.js'],
   bundle: true,
-  outfile: 'public/js/vulkano-webcomponent.js',
+  outfile: 'public/js/boilerplate-webcomponent.js',
   logLevel: 'warning',
   sourcemap: true,
-  plugins: [
-    eslint({ fix: true, })
-  ]
+  plugins: [eslint({ fix: true })]
 });
-await vulkano_webcomponent.watch();
+await boilerplate_webcomponent.watch();
 
 // client/components/simple-greeting/main.ts
 let ts_component = await esbuild.context({
@@ -37,9 +32,7 @@ let ts_component = await esbuild.context({
   outfile: 'public/js/simple-greeting.js',
   logLevel: 'warning',
   sourcemap: true,
-  plugins: [
-    esbuildPluginTsc({ force: true })
-  ]
+  plugins: [esbuildPluginTsc({ force: true })]
 });
 await ts_component.watch();
 
@@ -50,9 +43,11 @@ let style = await esbuild.context({
   outfile: 'public/css/style.css',
   logLevel: 'error',
   sourcemap: true,
-  plugins: [sassPlugin({
-    embedded: true
-  })]
+  plugins: [
+    sassPlugin({
+      embedded: true
+    })
+  ]
 });
 await style.watch();
 
