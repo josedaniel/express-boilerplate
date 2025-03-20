@@ -6,3 +6,4 @@
 - reemplazar browsersync
 - Instalar una configuración por defecto de pm2
 - Crear algunos defaults para copilot
+- cambiar de require a import
