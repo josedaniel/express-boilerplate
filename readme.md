@@ -56,3 +56,4 @@ express-boilerplate/
 - 🔧 Add configurations to enable/disable route families
 - ⚡ Install a default pm2 configuration
 - 🤖 Create some defaults for Copilot
+- ✨ Add and Improve documentation: client side tooling, bruno, esm.
