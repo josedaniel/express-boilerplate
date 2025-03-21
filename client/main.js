@@ -1,3 +1,5 @@
+import './components/boilerplate-webcomponent/main.js';
+
 console.log('Welcome to Express Boilerplate');
 console.log('Find this file in /client/main.js');
 console.log(

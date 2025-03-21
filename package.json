@@ -6,10 +6,10 @@
   "scripts": {
     "dev": "node ./node_modules/concurrently/dist/bin/concurrently -c green,cyan,yellow 'pnpm nodemon' 'pnpm esbuild' 'pnpm browsersync'",
     "client": "node ./node_modules/concurrently/dist/bin/concurrently -n esbuild,browsersync -c green,cyan 'pnpm esbuild' 'pnpm browsersync'",
-    "start": "node app.js",
     "nodemon": "./node_modules/nodemon/bin/nodemon.js --inspect",
-    "browsersync": "./node_modules/browser-sync/dist/bin.js start --config 'client/_settings/bs-config.js'",
-    "esbuild": "node client/_settings/esbuild-config.mjs"
+    "browsersync": "./node_modules/browser-sync/dist/bin.js start --config 'client/_settings/bs-config.cjs'",
+    "esbuild": "node client/_settings/esbuild-config.mjs",
+    "start": "NODE_ENV=production node index.js"
   },
   "keywords": [],
   "author": "",

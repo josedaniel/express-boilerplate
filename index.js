@@ -83,5 +83,18 @@ app.use('/service', service_routes);
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+  console.log(`
+------------------------------------------
+✨ 🚀 🔥
+Express Boilerplate
+Author: José Paternina
+------------------------------------------
+🟢 NodeJS:   ${process.version}
+🌍 NODE_ENV: ${process.env.NODE_ENV}
+🔌 PORT:     ${port}
+------------------------------------------
+🌐 Server running at http://localhost:${port}
+⌨️  Press Ctrl+C to terminate...
+------------------------------------------
+  `);
 });
