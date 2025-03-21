@@ -1,19 +1,19 @@
-# Express Boilerplate
+# 🚀 Express Boilerplate
 
 A basic boilerplate for building Express.js applications.
 
-## Features:
+## ✨ Features:
 
-- Modular route and controller structure
-- Middleware support for request handling
-- Handlebars templating engine for views
-- Static file serving (CSS, JS, etc.)
-- Environment-based configuration
-- Example `.env` file for environment variables
-- Pre-configured ESLint and Prettier for code quality
-- Nodemon for development server auto-reloading
+- 🛠️ Modular route and controller structure
+- ⚙️ Middleware support for request handling
+- 🖼️ Handlebars templating engine for views
+- 📂 Static file serving (CSS, JS, etc.)
+- 🌍 Environment-based configuration
+- 📄 Example `.env` file for environment variables
+- ✅ Pre-configured ESLint and Prettier for code quality
+- 🔄 Nodemon for development server auto-reloading
 
-## Project Structure:
+## 🗂️ Project Structure:
 
 ```
 express-boilerplate/
@@ -51,8 +51,8 @@ express-boilerplate/
 └── tsconfig.json           # TypeScript configuration (if applicable)
 ```
 
-## Roadmap:
+## 🛤️ Roadmap:
 
-- Add configurations to enable/disable route families
-- Install a default pm2 configuration
-- Create some defaults for Copilot
+- 🔧 Add configurations to enable/disable route families
+- ⚡ Install a default pm2 configuration
+- 🤖 Create some defaults for Copilot
